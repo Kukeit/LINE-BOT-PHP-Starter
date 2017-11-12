@@ -13,13 +13,15 @@ if (!is_null($events['events'])) {
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 			// Get text sent
 			$text = $event['message']['text'];
+
+			$image = file_get_contents("http://www.pttplc.com/th/getoilprice.aspx");
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 
 			// Build message to reply back
 			$messages = [
 				'type' => 'text',
-				'text' => $text.' replyToken: '.$replyToken
+				'text' => $text.' replyToken: '.$replyToken . ':'.$image
 			];
 
 			// Make a POST Request to Messaging API to reply to sender
