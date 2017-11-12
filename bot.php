@@ -19,9 +19,14 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 
 			// Build message to reply back
-			$messages = [
+			/*$messages = [
 				'type' => 'text',
 				'text' => $text.' replyToken: '.$replyToken 
+			];*/
+			$messages=[
+				"type": "image",
+    			"originalContentUrl": "http://www.pttplc.com/th/getoilprice.aspx",
+    			"previewImageUrl": "http://www.pttplc.com/th/getoilprice.aspx"
 			];
 
 			// Make a POST Request to Messaging API to reply to sender
