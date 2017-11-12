@@ -1,4 +1,6 @@
-<?php
+<?php 
+
+
 $access_token = 'DsIQv47M0kuBZMWl4pDyrFHYBjkC7rSnDS1ByA4+9WnHoT215FkNOxoxo6p5gsmeAHLCOg1Nc7NYkmR6W7Rb8me9pJb5egSxP5xvcYj6HYxkXF8E5xJEOKo/660uBoAWPLF9R6lvcz//UCnCWQ5UqwdB04t89/1O/w1cDnyilFU=';
 
 // Get POST body content
@@ -14,45 +16,13 @@ if (!is_null($events['events'])) {
 			// Get text sent
 			$text = $event['message']['text'];
 
-			$image = file_get_contents("http://www.pttplc.com/th/getoilprice.aspx");
+			
 			// Get replyToken
 			$replyToken = $event['replyToken'];
-
-			// Build message to reply back
-			/*$messages = [
-				'type' => 'text',
-				'text' => $text.' replyToken: '.$replyToken 
-			];*/
-			$messages=[
-				"type" => "image",
-    			"originalContentUrl"=> "https://static.pexels.com/photos/241555/pexels-photo-241555.jpeg",
-    			"previewImageUrl"=> "https://static.pexels.com/photos/241555/pexels-photo-241555.jpeg"
-			];
-
-			// Make a POST Request to Messaging API to reply to sender
-			$url = 'https://api.line.me/v2/bot/message/reply';
-			$data = [
-				'replyToken' => $replyToken,
-				'messages' => [$messages],
-			];
-			/*echo '<pre>';
-			print_r($data);
-			echo '</pre>';*/
-			$post = json_encode($data);
-			$headers = array('Content-Type: multipart/form-data', 'Authorization: Bearer ' . $access_token);
-
-			$ch = curl_init($url);
-			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-			curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
-			curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-			$result = curl_exec($ch);
-			curl_close($ch);
-
-			echo $result . "\r\n";
+			$contents = file_get_contents('./curl.sh '.$access_token.' '.$replyToken);
+			echo shell_exec($contents);
 		}
 	}
 }
-echo "OK1";
+echo 'K1';
 ?>
