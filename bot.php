@@ -37,8 +37,8 @@ if (!is_null($events['events'])) {
 			];
 			/*echo '<pre>';
 			print_r($data);
-			echo '</pre>';
-			$post = json_encode($data);*/
+			echo '</pre>';*/
+			$post = json_encode($data);
 			$headers = array('Content-Type: multipart/form-data', 'Authorization: Bearer ' . $access_token);
 
 			$ch = curl_init($url);
