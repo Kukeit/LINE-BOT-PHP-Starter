@@ -25,8 +25,8 @@ if (!is_null($events['events'])) {
 			];*/
 			$messages=[
 				"type": "image",
-    			"originalContentUrl": "http://www.pttplc.com/th/getoilprice.aspx",
-    			"previewImageUrl": "http://www.pttplc.com/th/getoilprice.aspx"
+    			"originalContentUrl": "https://static.pexels.com/photos/241555/pexels-photo-241555.jpeg",
+    			"previewImageUrl": "https://static.pexels.com/photos/241555/pexels-photo-241555.jpeg"
 			];
 
 			// Make a POST Request to Messaging API to reply to sender
