@@ -19,15 +19,15 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 
 			// Build message to reply back
-			$messages = [
+			/*$messages = [
 				'type' => 'text',
 				'text' => $text.' replyToken: '.$replyToken 
-			];
-			/*$messages=[
-				"type": "image",
-    			"originalContentUrl": "https://static.pexels.com/photos/241555/pexels-photo-241555.jpeg",
-    			"previewImageUrl": "http://www.pttplc.com/th/getoilprice.aspx"
 			];*/
+			$messages=[
+				"type" => "image",
+    			"originalContentUrl"=> "https://static.pexels.com/photos/241555/pexels-photo-241555.jpeg",
+    			"previewImageUrl"=> "http://www.pttplc.com/th/getoilprice.aspx"
+			];
 
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
@@ -35,11 +35,11 @@ if (!is_null($events['events'])) {
 				'replyToken' => $replyToken,
 				'messages' => [$messages],
 			];
-			echo '<pre>';
+			/*echo '<pre>';
 			print_r($data);
 			echo '</pre>';
-			$post = json_encode($data);
-			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+			$post = json_encode($data);*/
+			$headers = array('Content-Type: multipart/form-data', 'Authorization: Bearer ' . $access_token);
 
 			$ch = curl_init($url);
 			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
