@@ -29,7 +29,14 @@ if($arrJson['events'][0]['message']['text'] == "hi"){
 
 }else if($arrJson['events'][0]['message']['text'] == "img1"){
 
-	$imageMesageBuilder=new \LINE\LINEBot\MessageBuilder\ImageMessageBuilder('https://static.pexels.com/photos/635608/pexels-photo-635608.jpeg','https://static.pexels.com/photos/635608/pexels-photo-635608.jpeg');
+	/*
+		1. get price 
+		2. generate canvas 
+		3. save to image server with postfix userid 
+		4. return by userid
+	*/
+
+	$imageMesageBuilder=new \LINE\LINEBot\MessageBuilder\ImageMessageBuilder('https://javahome.herokuapp.com/img.png','https://javahome.herokuapp.com/img.png');
 
 	
 	$response = $bot->replyMessage($arrJson['events'][0]['replyToken'], $imageMesageBuilder);
