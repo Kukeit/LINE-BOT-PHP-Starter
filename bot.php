@@ -44,15 +44,8 @@ if($arrJson['events'][0]['message']['text'] == "hi"){
                 'ราคาน้ำมันของ ปตท',
                  new ButtonTemplateBuilder(
                     'ราคาน้ำมันของ ปตท. วันนี้ :',
-                    ' Blue Gasoline 95 35.36 บาท
-Blue Diesel 26.39 บาท
-Blue Gasohol 91 27.98 บาท
-Blue Gasohol E20 25.74 บาท
-NGV 13.59 บาท
-Blue Gasohol 95 28.25 บาท
-Blue Gasohol E85 20.84 บาท
-HyForce Premium Diesel 29.39 บาท',
-                    'https://botw-pd.s3.amazonaws.com/styles/logo-thumbnail/s3/032011/ptt_thailand_logo-converted.png',
+                    date("d/m/Y", time()),
+                    './img.png',
                     [
                         new PostbackTemplateActionBuilder('postback label', 'post=back'),
                         new MessageTemplateActionBuilder('message label', 'test message'),
