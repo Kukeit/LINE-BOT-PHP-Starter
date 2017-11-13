@@ -74,11 +74,12 @@
 
 <body>
 	<canvas width="500" height="300" id="canvas">Sorry, no canvas available</canvas>
-	<a id="download">Download as image</a>
 </body>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
+<script
+  src="https://code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous"></script>
 <script type='text/javascript'>
 		/**
  *    Ken Fyrstenberg Nilsen
@@ -102,10 +103,9 @@
  	ctx.fillText('Click link below to save this as image', 15, canvas.height / 2 + 35);
  }
 
-/**
- * Draw something to canvas
- */
  doCanvas();
+
+/*
   var canvasData = canvas.toDataURL("image/png");
   var ajax = new XMLHttpRequest();
 
@@ -115,6 +115,20 @@
   }
   ajax.setRequestHeader("Content-Type", "application/upload");
   ajax.send("imgData=" + canvasData);
+*/
+
+$(document).ready(function(){
+	var canvasData = canvas.toDataURL("image/png");
+	   $.ajax({
+	      type: "POST",
+	      url: "./htmltoimage1.php",
+	      data: {imgData:canvasData} ,
+	      success: function(data){
+	   			console.log('success.')
+		    }
+		});
+});
+
 
 </script>
 </html>
