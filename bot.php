@@ -41,7 +41,7 @@ if($arrJson['events'][0]['message']['text'] == "hi"){
 		array('type'=>'message','label'=>'No','text'=>'no')
 	);
 	$TemplateMessageBuilderObj=new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder(
-                'alt test',
+                'ราคาน้ำมันของ ปตท',
                  new ButtonTemplateBuilder(
                     'ราคาน้ำมันของ ปตท. วันนี้ :',
                     '111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111'),
