@@ -1,5 +1,4 @@
 <?php
-print_r($_POST['imgData']);
 if (isset($_POST['imgData'])) {
 	echo 'sss';
   $imageData = $_POST['imgData'];
