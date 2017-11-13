@@ -35,14 +35,14 @@ if($arrJson['events'][0]['message']['text'] == "hi"){
 	
 	$response = $bot->replyMessage($arrJson['events'][0]['replyToken'], $imageMesageBuilder);
 
-	$TemplateMessageBuilderObj=new LINEBot\MessageBuilder\TemplateMessageBuilder(
+	$TemplateMessageBuilderObj=new LINE\LINEBot\MessageBuilder\TemplateMessageBuilder(
                 'alt test',
-                new LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder(
+                new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder(
                     'button title',
                     'button button',
                     'http://www.topconnects.com/Content/img/ImagePlayButton/PlayButton-6.png',
                     [  
-                        new new LINEBot\MessageBuilder\TemplateActionBuilder\MessageTemplateActionBuilder('message label', 'test message')
+                        new  \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder('message label', 'test message')
                     ]
                 )
             );
