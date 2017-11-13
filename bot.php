@@ -24,10 +24,30 @@ if($arrJson['events'][0]['message']['text'] == "hi"){
 	$response = $bot->replyMessage($arrJson['events'][0]['replyToken'], $textMessageBuilder);
 }else if($arrJson['events'][0]['message']['text'] == "img1"){
 
-	$imageMesageBuilder=new \LINE\LINEBot\MessageBuilder\ImageMessageBuilder('https://ibb.co/n6rZhb','https://ibb.co/n6rZhb');
+	$imageMesageBuilder=new \LINE\LINEBot\MessageBuilder\ImageMessageBuilder('https://static.pexels.com/photos/635608/pexels-photo-635608.jpeg','https://static.pexels.com/photos/635608/pexels-photo-635608.jpeg');
 
 	
 	$response = $bot->replyMessage($arrJson['events'][0]['replyToken'], $imageMesageBuilder);
+	
+}else if($arrJson['events'][0]['message']['text'] == "theme1"){
+	$res = $bot->replyMessage(
+            'REPLY-TOKEN',
+            new LINEBot\MessageBuilder\TemplateMessageBuilder(
+                'alt test',
+                new ButtonTemplateBuilder(
+                    'button title',
+                    'button button',
+                    'http://www.topconnects.com/Content/img/ImagePlayButton/PlayButton-6.png',
+                    [
+                        new PostbackTemplateActionBuilder('postback label', 'post=back'),
+                        new MessageTemplateActionBuilder('message label', 'test message'),
+                        new UriTemplateActionBuilder('uri label', 'https://example.com'),
+                    ]
+                )
+            )
+        );
+
+	$response = $bot->replyMessage($arrJson['events'][0]['replyToken'], $res);
 }
 
 
