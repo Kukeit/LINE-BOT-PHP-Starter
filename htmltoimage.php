@@ -4,140 +4,134 @@
 	<title>Title of the document</title>
 	<style>
 		body {
-			font-family: "Lucida Grande", "Lucida Sans", Arial, sans-serif;
-			font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-
+			background-color:#555557;
+			padding:0;
+			margin:0;
+			overflow:hidden;
+			font-family:sans-serif;
+			-webkit-user-select: none;
+			-khtml-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
 		}
-
-		#widget{
-			width: 300px;
-			height: 500px;
+		canvas {
+			border:1px solid #000;
+			float:left;
+			clear:both;
 		}
+		#download {
+			float:left;
+			cursor:pointer;
+			color:#ccc;
+			padding:3px;
+		}
+		#download:hover {
+			color:#fff;
+		}
+	/*
+	div, input {
+	    font-size:16px;
+	    font-family:sans-serif;
+	    border:1px solid #000;
+	    border-radius: 5px;
+	    float:left;
+	    padding:5px;
+	    width:50px;
+	    margin:1px 1px;
+	    background-color:#bbb;
+	}
+	input[type='text'] {
+	    font-size:16px;
+	    font-weight:bold;
+	    width:70px;
+	    text-align:center;
+	    background-color:#fff;
+	    padding-bottom:4px;
+	}
+	input[type='button'] {
+	    font-size:16px;
+	    font-weight:bold;
+	    width:110px;
+	    text-align:center;
+	    background-color:#333;
+	    color:#eee;
+	    padding-bottom:4px;
+	}
+	input[type='button']:hover {
+	    background-color:#fff463;
+	    color:#000;
+	}
+	input[type='range'] {
+	    width:100px;
+	    margin:0 0 0 10px;
+	}
+	*/
 
-	</style>
+
+</style>
 </head>
 
 <body>
-	<span id="widget" class="widget" field="AGE" roundby="20" description="Patient age, in years">
-		<div class="header ng-scope">
-			<div class="title ng-binding">AGE</div>
-			<p class="ng-binding">Patient age, in years</p>
-		</div>
-		<div class="element ng-scope">
-			<div ng-show="hasData()" class="content">
-				<table ng-model="table" class="ng-pristine ng-valid">
-					<colgroup>
-					<col/>
-					<col width="60x"/>
-					<col width="100px"/>
-				</colgroup>
-				<thead>
-					<tr>
-						<th class="cell value">Value</th>
-						<th class="cell freq">Freq</th>
-						<th class="cell value"></th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr ng-repeat="rowKey in table.rowKeys | orderBy:elementRowSort " ng-click="onSelect(rowKey, $event.shiftKey)" ng-class="{true:'selected'}[isSelected(rowKey)]" data-key="0" class="selectable ng-scope">
-						<td class="cell value"><span tooltip="0 to 19" class="ng-scope ng-binding">0 to 19</span>
-						</td>
-
-						<td class="cell freq ng-binding">17.2%</td>
-						<td class="cell glyph">
-							<span class="bar bar-both" ng-style="{width: (table.getBothPct(rowKey) | barSize)+'%' }" style="width: 17.234468937875754%;"></span>
-							<span class="bar bar-fg" ng-style="{width: (table.getFgPct(rowKey) | barSize) +'%' }" style="width: 0%;"></span>
-							<span class="bar bar-bg" ng-style="{width: (table.getBgPct(rowKey) | barSize) +'%' }" style="width: 0%;"></span>
-						</td>
-					</tr><tr ng-repeat="rowKey in table.rowKeys | orderBy:elementRowSort " ng-click="onSelect(rowKey, $event.shiftKey)" ng-class="{true:'selected'}[isSelected(rowKey)]" data-key="20" class="selectable ng-scope">
-					<td class="cell value"><span tooltip="20 to 39" class="ng-scope ng-binding">20 to 39</span>
-					</td>
-					<td class="cell freq ng-binding">18.0%</td>
-					<td class="cell glyph">
-						<span class="bar bar-both" ng-style="{width: (table.getBothPct(rowKey) | barSize)+'%' }" style="width: 18.03607214428858%;"></span>
-						<span class="bar bar-fg" ng-style="{width: (table.getFgPct(rowKey) | barSize) +'%' }" style="width: 0%;"></span>
-						<span class="bar bar-bg" ng-style="{width: (table.getBgPct(rowKey) | barSize) +'%' }" style="width: 0%;"></span>
-					</td>
-				</tr><!-- end ngRepeat: rowKey in table.rowKeys | orderBy:elementRowSort --><tr ng-repeat="rowKey in table.rowKeys | orderBy:elementRowSort " ng-click="onSelect(rowKey, $event.shiftKey)" ng-class="{true:'selected'}[isSelected(rowKey)]" data-key="40" class="selectable ng-scope">
-				<td class="cell value"><span tooltip="40 to 59" class="ng-scope ng-binding">40 to 59</span>
-				</td>
-
-				<!--<td >{{table.getRowPercent('current', rowKey) | percent}}</td>-->
-				<td class="cell freq ng-binding">34.3%</td>
-				<td class="cell glyph">
-					<!--<div class="bar bar-both" style="width: {{(row.current.pct * 100)||2}}px; " ></div>-->
-					<span class="bar bar-both" ng-style="{width: (table.getBothPct(rowKey) | barSize)+'%' }" style="width: 34.2685370741483%;"></span>
-					<span class="bar bar-fg" ng-style="{width: (table.getFgPct(rowKey) | barSize) +'%' }" style="width: 0%;"></span>
-					<span class="bar bar-bg" ng-style="{width: (table.getBgPct(rowKey) | barSize) +'%' }" style="width: 0%;"></span>
-				</td>
-			</tr><!-- end ngRepeat: rowKey in table.rowKeys | orderBy:elementRowSort --><tr ng-repeat="rowKey in table.rowKeys | orderBy:elementRowSort " ng-click="onSelect(rowKey, $event.shiftKey)" ng-class="{true:'selected'}[isSelected(rowKey)]" data-key="60" class="selectable ng-scope">
-			<td class="cell value"><span tooltip="60 to 79" class="ng-scope ng-binding">60 to 79</span>
-			</td>
-
-			<!--<td >{{table.getRowPercent('current', rowKey) | percent}}</td>-->
-			<td class="cell freq ng-binding">24.0%</td>
-			<td class="cell glyph">
-				<!--<div class="bar bar-both" style="width: {{(row.current.pct * 100)||2}}px; " ></div>-->
-				<span class="bar bar-both" ng-style="{width: (table.getBothPct(rowKey) | barSize)+'%' }" style="width: 24.04809619238477%;"></span>
-				<span class="bar bar-fg" ng-style="{width: (table.getFgPct(rowKey) | barSize) +'%' }" style="width: 0%;"></span>
-				<span class="bar bar-bg" ng-style="{width: (table.getBgPct(rowKey) | barSize) +'%' }" style="width: 0%;"></span>
-			</td>
-		</tr><!-- end ngRepeat: rowKey in table.rowKeys | orderBy:elementRowSort --><tr ng-repeat="rowKey in table.rowKeys | orderBy:elementRowSort " ng-click="onSelect(rowKey, $event.shiftKey)" ng-class="{true:'selected'}[isSelected(rowKey)]" data-key="80" class="selectable ng-scope">
-		<td class="cell value"><span tooltip="80 to 99" class="ng-scope ng-binding">80 to 99</span>
-		</td>
-
-		<!--<td >{{table.getRowPercent('current', rowKey) | percent}}</td>-->
-		<td class="cell freq ng-binding">6.4%</td>
-		<td class="cell glyph">
-			<!--<div class="bar bar-both" style="width: {{(row.current.pct * 100)||2}}px; " ></div>-->
-			<span class="bar bar-both" ng-style="{width: (table.getBothPct(rowKey) | barSize)+'%' }" style="width: 6.4128256513026045%;"></span>
-			<span class="bar bar-fg" ng-style="{width: (table.getFgPct(rowKey) | barSize) +'%' }" style="width: 0%;"></span>
-			<span class="bar bar-bg" ng-style="{width: (table.getBgPct(rowKey) | barSize) +'%' }" style="width: 0%;"></span>
-		</td>
-	</tr><!-- end ngRepeat: rowKey in table.rowKeys | orderBy:elementRowSort -->
-	<tr ng-show="getShowMean()" class="">
-		<td class="stat">Mean</td>
-		<td class="ng-binding">46.1</td>
-	</tr>
-
-
-</tbody>
-</table>
-</div>
-
-
-</div>
-<!-- ngRepeat: field in getChildren(field) -->
-</span>
-<br/>
-<input type="button" id="btnSave" value="Save PNG"/>
-
-<div id="img-out"></div>
+	<canvas width="500" height="300" id="canvas">Sorry, no canvas available</canvas>
+	<a id="download">Download as image</a>
 </body>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/canvas2image@1.0.5/canvas2image.js"></script>
 
-	<script type='text/javascript'>
-		$(function() { 
-			$("#btnSave").click(function() { 
-				html2canvas($("#widget"), {
-					onrendered: function(canvas) {
-						//theCanvas = canvas;
-						document.body.appendChild(canvas);
+<script type='text/javascript'>
+		/**
+ *    Ken Fyrstenberg Nilsen
+ *    Abidas Software
+ */
+ var canvas = document.getElementById('canvas'),
+ ctx = canvas.getContext('2d');
 
-                // Convert and download as image 
-                console.log(canvas);
-                Canvas2Image.saveAsPNG(canvas); 
-                $("#img-out").append(canvas);
-                // Clean up 
-                //document.body.removeChild(canvas);
+/**
+ * Demonstrates how to download a canvas an image with a single
+ * direct click on a link.
+ */
+ function doCanvas() {
+ 	/* draw something */
+ 	ctx.fillStyle = '#f90';
+ 	ctx.fillRect(0, 0, canvas.width, canvas.height);
+ 	ctx.fillStyle = '#fff';
+ 	ctx.font = '60px sans-serif';
+ 	ctx.fillText('ราคาน้ำมัน', 10, canvas.height / 2 - 15);
+ 	ctx.font = '26px sans-serif';
+ 	ctx.fillText('Click link below to save this as image', 15, canvas.height / 2 + 35);
 
-           		}	
-        		});
-			});
-		}); 
 
-	</script>
+ 	var c = document.getElementById("canvas");
+	var link = document.getElementById('download');
+	link.setAttribute('download', 'MintyPaper.png');
+	link.setAttribute('href', c.toDataURL("image/png").replace("image/png", "image/octet-stream"));
+	link.click();
+ }
+
+/**
+ * This is the function that will take care of image extracting and
+ * setting proper filename for the download.
+ * IMPORTANT: Call it from within a onclick event.
+ */
+ function downloadCanvas(link, canvasId, filename) {
+ 	//link.href = document.getElementById(canvasId).toDataURL();
+ 	//link.download = filename;
+ }
+
+/** 
+ * The event handler for the link's onclick event. We give THIS as a
+ * parameter (=the link element), ID of the canvas and a filename.
+ */
+ document.getElementById('download').addEventListener('click', function() {
+ 	downloadCanvas(this, 'canvas', 'test.png');
+ }, false);
+
+/**
+ * Draw something to canvas
+ */
+ doCanvas();
+</script>
 </html>
