@@ -33,7 +33,7 @@ if($arrJson['events'][0]['message']['text'] == "hi"){
 }else if($arrJson['events'][0]['message']['text'] == "theme1"){
 
 
-	$TemplateMessageBuilderObj=new LINE\LINEBot\MessageBuilder\TemplateMessageBuilder(
+	$TemplateMessageBuilderObj=new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder(
                 'alt test',
                 new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder(
                     'button title',
