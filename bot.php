@@ -30,6 +30,11 @@ if($arrJson['events'][0]['message']['text'] == "hi"){
 	$response = $bot->replyMessage($arrJson['events'][0]['replyToken'], $imageMesageBuilder);
 
 }else if($arrJson['events'][0]['message']['text'] == "theme1"){
+	$imageMesageBuilder=new \LINE\LINEBot\MessageBuilder\ImageMessageBuilder('https://static.pexels.com/photos/635608/pexels-photo-635608.jpeg','https://static.pexels.com/photos/635608/pexels-photo-635608.jpeg');
+
+	
+	$response = $bot->replyMessage($arrJson['events'][0]['replyToken'], $imageMesageBuilder);
+	
 	$TemplateMessageBuilderObj=new LINEBot\MessageBuilder\TemplateMessageBuilder(
                 'alt test',
                 new ButtonTemplateBuilder(
