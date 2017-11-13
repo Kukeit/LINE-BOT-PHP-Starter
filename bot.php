@@ -13,9 +13,17 @@ $arrJson = json_decode($content, true);
 
 $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
 $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret]);
+$response='';
 
-$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('hello->'.$arrJson['events'][0]['replyToken']);
-$response = $bot->replyMessage($arrJson['events'][0]['replyToken'], $textMessageBuilder);
+if($arrJson['events'][0]['message']['text'] == "hi"){
+	$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('Hi->'.$arrJson['events'][0]['replyToken']);
+	$response = $bot->replyMessage($arrJson['events'][0]['replyToken'], $textMessageBuilder);
+}else if($arrJson['events'][0]['message']['text'] == "fuck"){
+	$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('Fuck you.->'.$arrJson['events'][0]['replyToken']);
+	$response = $bot->replyMessage($arrJson['events'][0]['replyToken'], $textMessageBuilder);
+}
+
+
 
 echo $response->getHTTPStatus() . ' ' . $response->getRawBody()."->";
 
