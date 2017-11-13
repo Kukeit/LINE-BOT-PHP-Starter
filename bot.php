@@ -24,9 +24,8 @@ if($arrJson['events'][0]['message']['text'] == "hi"){
 	$response = $bot->replyMessage($arrJson['events'][0]['replyToken'], $textMessageBuilder);
 }else if($arrJson['events'][0]['message']['text'] == "img1"){
 
-	$imageMesageBuilder=new \LINE\LINEBot\MessageBuilder\ImageMessageBuilder('https://static.pexels.com/photos/635608/pexels-photo-635608.jpeg','https://static.pexels.com/photos/635608/pexels-photo-635608.jpeg');
+	$imageMesageBuilder=new \LINE\LINEBot\MessageBuilder\ImageMessageBuilder('https://ibb.co/n6rZhb','https://ibb.co/n6rZhb');
 
-	//buildMessage
 	
 	$response = $bot->replyMessage($arrJson['events'][0]['replyToken'], $imageMesageBuilder);
 }
@@ -34,7 +33,6 @@ if($arrJson['events'][0]['message']['text'] == "hi"){
 
 
 echo $response->getHTTPStatus() . ' ' . $response->getRawBody()."->";
-
 
 
 
