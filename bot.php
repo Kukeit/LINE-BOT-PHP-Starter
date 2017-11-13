@@ -20,7 +20,15 @@ if($arrJson['events'][0]['message']['text'] == "hi"){
 	$response = $bot->replyMessage($arrJson['events'][0]['replyToken'], $textMessageBuilder);
 }else if($arrJson['events'][0]['message']['text'] == "fuck"){
 	$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('Fuck you.->'.$arrJson['events'][0]['replyToken']);
+
 	$response = $bot->replyMessage($arrJson['events'][0]['replyToken'], $textMessageBuilder);
+}else if($arrJson['events'][0]['message']['text'] == "img1"){
+
+	$imageMesageBuilder=new \LINE\LINEBot\MessageBuilder\ImageMessageBuilder('https://static.pexels.com/photos/635608/pexels-photo-635608.jpeg','https://static.pexels.com/photos/635608/pexels-photo-635608.jpeg');
+
+	//buildMessage
+	
+	$response = $bot->replyMessage($arrJson['events'][0]['replyToken'], $imageMesageBuilder);
 }
 
 
