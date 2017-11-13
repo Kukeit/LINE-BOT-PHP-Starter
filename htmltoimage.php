@@ -104,11 +104,12 @@
  	ctx.fillText('Click link below to save this as image', 15, canvas.height / 2 + 35);
 
 
- 	var c = document.getElementById("canvas");
+ 	/*var c = document.getElementById("canvas");
 	var link = document.getElementById('download');
 	link.setAttribute('download', 'MintyPaper.png');
 	link.setAttribute('href', c.toDataURL("image/png").replace("image/png", "image/octet-stream"));
 	link.click();
+	*/
  }
 
 /**
@@ -133,5 +134,18 @@
  * Draw something to canvas
  */
  doCanvas();
+
+
+  var canvasData = canvas.toDataURL("image/png");
+  var ajax = new XMLHttpRequest();
+
+  ajax.open("POST", "./htmltoimage1.php", false);
+  ajax.onreadystatechange = function() {
+    console.log("data->"+ajax.responseText);
+  }
+  ajax.setRequestHeader("Content-Type", "application/upload");
+  ajax.send("imgData=" + canvasData);
+
 </script>
 </html>
+
