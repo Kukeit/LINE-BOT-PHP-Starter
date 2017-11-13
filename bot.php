@@ -36,7 +36,10 @@ if($arrJson['events'][0]['message']['text'] == "hi"){
 		4. return by userid
 	*/
 
-	$imageMesageBuilder=new \LINE\LINEBot\MessageBuilder\ImageMessageBuilder('https://cdn.pixabay.com/photo/2017/11/10/12/53/face-2936245_960_720.jpg','https://cdn.pixabay.com/photo/2017/11/10/12/53/face-2936245_960_720.jpg');
+	$imageMesageBuilder=new \LINE\LINEBot\MessageBuilder\ImageMessageBuilder(
+		'http://www.thaisugarmill.com/gallery_images/192255990949-TSMTKPLOGO.jpg',
+		'http://www.thaisugarmill.com/gallery_images/192255990949-TSMTKPLOGO.jpg'
+		);
 
 	
 	$response = $bot->replyMessage($arrJson['events'][0]['replyToken'], $imageMesageBuilder);
