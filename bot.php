@@ -31,7 +31,7 @@ if($arrJson['events'][0]['message']['text'] == "hi"){
 	
 }else if($arrJson['events'][0]['message']['text'] == "theme1"){
 	$res = $bot->replyMessage(
-            'REPLY-TOKEN',
+            $arrJson['events'][0]['replyToken'],
             new LINEBot\MessageBuilder\TemplateMessageBuilder(
                 'alt test',
                 new ButtonTemplateBuilder(
