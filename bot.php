@@ -28,9 +28,9 @@ if($arrJson['events'][0]['message']['text'] == "hi"){
 
 	
 	$response = $bot->replyMessage($arrJson['events'][0]['replyToken'], $imageMesageBuilder);
-	
+
 }else if($arrJson['events'][0]['message']['text'] == "theme1"){
-	$res = $bot->replyMessage(
+	$response = $bot->replyMessage(
             $arrJson['events'][0]['replyToken'],
             new LINEBot\MessageBuilder\TemplateMessageBuilder(
                 'alt test',
@@ -47,7 +47,7 @@ if($arrJson['events'][0]['message']['text'] == "hi"){
             )
         );
 
-	$response = $bot->replyMessage($arrJson['events'][0]['replyToken'], $res);
+	//$response = $bot->replyMessage($arrJson['events'][0]['replyToken'], $res);
 }
 
 
