@@ -22,6 +22,7 @@ if($arrJson['events'][0]['message']['text'] == "hi"){
 	$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('Fuck you.->'.$arrJson['events'][0]['replyToken']);
 
 	$response = $bot->replyMessage($arrJson['events'][0]['replyToken'], $textMessageBuilder);
+
 }else if($arrJson['events'][0]['message']['text'] == "img1"){
 
 	$imageMesageBuilder=new \LINE\LINEBot\MessageBuilder\ImageMessageBuilder('https://static.pexels.com/photos/635608/pexels-photo-635608.jpeg','https://static.pexels.com/photos/635608/pexels-photo-635608.jpeg');
@@ -44,6 +45,8 @@ if($arrJson['events'][0]['message']['text'] == "hi"){
             $arrJson['events'][0]['replyToken'],$TemplateMessageBuilderObj);
 
 	//$response = $bot->replyMessage($arrJson['events'][0]['replyToken'], $res);
+}else if($arrJson['events'][0]['message']['text'] == "s1"){
+    $response = $bot->replyMessage($arrJson['events'][0]['replyToken'], new StickerMessageBuilder('1', '2'));
 }
 
 echo $response->getHTTPStatus() . ' ' . $response->getRawBody()."->";
