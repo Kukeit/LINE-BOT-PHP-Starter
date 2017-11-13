@@ -44,7 +44,7 @@ if($arrJson['events'][0]['message']['text'] == "hi"){
                 'ราคาน้ำมันของ ปตท',
                  new ButtonTemplateBuilder(
                     'ราคาน้ำมันของ ปตท. วันนี้ :',
-                    date("d/m/Y", time()).' Blue Gasoline 95 35.36 บาท
+                    ' Blue Gasoline 95 35.36 บาท
 Blue Diesel 26.39 บาท
 Blue Gasohol 91 27.98 บาท
 Blue Gasohol E20 25.74 บาท
