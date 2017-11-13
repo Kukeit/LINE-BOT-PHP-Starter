@@ -36,67 +36,7 @@ if($arrJson['events'][0]['message']['text'] == "hi"){
 		4. return by userid
 	*/
 
-?>
-<canvas width="500" height="300" id="canvas">Sorry, no canvas available</canvas>
-<script
-  src="https://code.jquery.com/jquery-3.2.1.js"
-  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
-  crossorigin="anonymous"></script>
-<script type='text/javascript'>
-		/**
- *    Ken Fyrstenberg Nilsen
- *    Abidas Software
- */
- var canvas = document.getElementById('canvas'),
- ctx = canvas.getContext('2d');
-
-/**
- * Demonstrates how to download a canvas an image with a single
- * direct click on a link.
- */
- function doCanvas() {
- 	/* draw something */
- 	ctx.fillStyle = '#f90';
- 	ctx.fillRect(0, 0, canvas.width, canvas.height);
- 	ctx.fillStyle = '#fff';
- 	ctx.font = '60px sans-serif';
- 	ctx.fillText('ราคาน้ำมัน', 10, canvas.height / 2 - 15);
- 	ctx.font = '26px sans-serif';
- 	ctx.fillText('Click link below to save this as image', 15, canvas.height / 2 + 35);
- }
-
- doCanvas();
-
-/*
-  var canvasData = canvas.toDataURL("image/png");
-  var ajax = new XMLHttpRequest();
-
-  ajax.open("POST", "./htmltoimage1.php", false);
-  ajax.onreadystatechange = function() {
-    console.log("data->"+ajax.responseText);
-  }
-  ajax.setRequestHeader("Content-Type", "application/upload");
-  ajax.send("imgData=" + canvasData);
-*/
-
-$(document).ready(function(){
-	var canvasData = canvas.toDataURL("image/png");
-	   $.ajax({
-	      type: "POST",
-	      url: "./htmltoimage1.php",
-	      data: {imgData:canvasData} ,
-	      success: function(data){
-	   			console.log('success.')
-		    }
-		});
-});
-
-
-</script>
-
-<?php
-
-	$imageMesageBuilder=new \LINE\LINEBot\MessageBuilder\ImageMessageBuilder('https://javahome.herokuapp.com/file1234.png','https://javahome.herokuapp.com/file1234.png');
+	$imageMesageBuilder=new \LINE\LINEBot\MessageBuilder\ImageMessageBuilder('https://javahome.herokuapp.com/img.png','https://javahome.herokuapp.com/img.png');
 
 	
 	$response = $bot->replyMessage($arrJson['events'][0]['replyToken'], $imageMesageBuilder);
