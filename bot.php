@@ -43,7 +43,7 @@ if($arrJson['events'][0]['message']['text'] == "hi"){
 	$TemplateMessageBuilderObj=new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder(
                 'alt test',
                  new ButtonTemplateBuilder(
-                    'button title:'.date("d/m/Y", time(),
+                    'button title:'.date("d/m/Y", time()),
                     'button button',
                     'https://example.com/thumbnail.jpg',
                     [
