@@ -36,7 +36,7 @@ if($arrJson['events'][0]['message']['text'] == "hi"){
 		4. return by userid
 	*/
 
-	$imageMesageBuilder=new \LINE\LINEBot\MessageBuilder\ImageMessageBuilder('https://javahome.herokuapp.com/img.png','https://javahome.herokuapp.com/img.png');
+	$imageMesageBuilder=new \LINE\LINEBot\MessageBuilder\ImageMessageBuilder('http://www.online-image-editor.com/help/images/exmpl_start.jpg','http://www.online-image-editor.com/help/images/exmpl_start.jpg');
 
 	
 	$response = $bot->replyMessage($arrJson['events'][0]['replyToken'], $imageMesageBuilder);
