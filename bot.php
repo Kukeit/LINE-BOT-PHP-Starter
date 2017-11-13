@@ -46,7 +46,7 @@ if($arrJson['events'][0]['message']['text'] == "hi"){
 
 	//$response = $bot->replyMessage($arrJson['events'][0]['replyToken'], $res);
 }else if($arrJson['events'][0]['message']['text'] == "s1"){
-    $response = $bot->replyMessage($arrJson['events'][0]['replyToken'], new StickerMessageBuilder('1', '2'));
+    $response = $bot->replyMessage($arrJson['events'][0]['replyToken'], new \LINE\LINEBot\MessageBuilder\StickerMessageBuilder('1', '2'));
 }
 
 echo $response->getHTTPStatus() . ' ' . $response->getRawBody()."->";
