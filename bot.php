@@ -45,12 +45,12 @@ if($arrJson['events'][0]['message']['text'] == "hi"){
                  new ButtonTemplateBuilder(
                     'ราคาน้ำมันของ ปตท. วันนี้ :',
                     date("d/m/Y", time()),
-                    'https://botw-pd.s3.amazonaws.com/styles/logo-thumbnail/s3/032011/ptt_thailand_logo-converted.png',
+                    'https://botw-pd.s3.amazonaws.com/styles/logo-thumbnail/s3/032011/ptt_thailand_logo-converted.png'/*,
                     [
                         new PostbackTemplateActionBuilder('postback label', 'post=back'),
                         new MessageTemplateActionBuilder('message label', 'test message'),
                         new UriTemplateActionBuilder('uri label', 'http://addplaybuttontoimage.way4info.net/Images/Icons/21.png'),
-                    ]
+                    ]*/
                 )
             );
 	$response = $bot->replyMessage(
