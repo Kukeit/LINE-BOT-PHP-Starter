@@ -36,7 +36,7 @@ if($arrJson['events'][0]['message']['text'] == "hi"){
 		4. return by userid
 	*/
 
-	$imageMesageBuilder=new \LINE\LINEBot\MessageBuilder\ImageMessageBuilder('http://www.online-image-editor.com/help/images/exmpl_start.jpg','http://www.online-image-editor.com/help/images/exmpl_start.jpg');
+	$imageMesageBuilder=new \LINE\LINEBot\MessageBuilder\ImageMessageBuilder('https://cdn.pixabay.com/photo/2017/11/10/12/53/face-2936245_960_720.jpg','https://cdn.pixabay.com/photo/2017/11/10/12/53/face-2936245_960_720.jpg');
 
 	
 	$response = $bot->replyMessage($arrJson['events'][0]['replyToken'], $imageMesageBuilder);
