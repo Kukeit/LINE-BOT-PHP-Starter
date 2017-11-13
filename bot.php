@@ -44,7 +44,7 @@ if($arrJson['events'][0]['message']['text'] == "hi"){
                 'ราคาน้ำมันของ ปตท',
                  new ButtonTemplateBuilder(
                     'ราคาน้ำมันของ ปตท. วันนี้ :',
-                    '111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111'),
+                    date("d/m/Y", time()),
                     'https://botw-pd.s3.amazonaws.com/styles/logo-thumbnail/s3/032011/ptt_thailand_logo-converted.png',
                     [
                         new PostbackTemplateActionBuilder('postback label', 'post=back'),
