@@ -30,9 +30,7 @@ if($arrJson['events'][0]['message']['text'] == "hi"){
 	$response = $bot->replyMessage($arrJson['events'][0]['replyToken'], $imageMesageBuilder);
 
 }else if($arrJson['events'][0]['message']['text'] == "theme1"){
-	$response = $bot->replyMessage(
-            $arrJson['events'][0]['replyToken'],
-            new LINEBot\MessageBuilder\TemplateMessageBuilder(
+	$TemplateMessageBuilderObj=new LINEBot\MessageBuilder\TemplateMessageBuilder(
                 'alt test',
                 new ButtonTemplateBuilder(
                     'button title',
@@ -44,13 +42,12 @@ if($arrJson['events'][0]['message']['text'] == "hi"){
                         new UriTemplateActionBuilder('uri label', 'https://example.com'),
                     ]
                 )
-            )
-        );
+            );
+	$response = $bot->replyMessage(
+            $arrJson['events'][0]['replyToken'],$TemplateMessageBuilderObj);
 
 	//$response = $bot->replyMessage($arrJson['events'][0]['replyToken'], $res);
 }
-
-
 
 echo $response->getHTTPStatus() . ' ' . $response->getRawBody()."->";
 
