@@ -43,8 +43,8 @@ if($arrJson['events'][0]['message']['text'] == "hi"){
 	$TemplateMessageBuilderObj=new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder(
                 'alt test',
                  new ButtonTemplateBuilder(
-                    'ราคาน้ำมันของ ปตท. วันนี้ :'.date("d/m/Y", time()),
-                    'button button',
+                    'ราคาน้ำมันของ ปตท. วันนี้ :',
+                    date("d/m/Y", time()),
                     'https://example.com/thumbnail.jpg',
                     [
                         new PostbackTemplateActionBuilder('postback label', 'post=back'),
