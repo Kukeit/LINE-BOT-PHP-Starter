@@ -40,10 +40,7 @@ if($arrJson['events'][0]['message']['text'] == "hi"){
                 new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder(
                     'button title',
                     'button button',
-                    'http://www.topconnects.com/Content/img/ImagePlayButton/PlayButton-6.png',
-                    [  
-                        new  \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder('message label', 'test message')
-                    ]
+                    'http://www.topconnects.com/Content/img/ImagePlayButton/PlayButton-6.png'
                 )
             );
 	$response = $bot->replyMessage(
