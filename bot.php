@@ -32,13 +32,21 @@ if($arrJson['events'][0]['message']['text'] == "hi"){
 
 }else if($arrJson['events'][0]['message']['text'] == "theme1"){
 
-
+	$actions=array(
+		array('type'=>'message','label'=>'Yes','text'=>'yes'),
+		array('type'=>'message','label'=>'No','text'=>'no')
+	);
 	$TemplateMessageBuilderObj=new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder(
                 'alt test',
-                new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder(
+                 new ButtonTemplateBuilder(
                     'button title',
                     'button button',
-                    'http://www.topconnects.com/Content/img/ImagePlayButton/PlayButton-6.png'
+                    'https://example.com/thumbnail.jpg',
+                    [
+                        new PostbackTemplateActionBuilder('postback label', 'post=back'),
+                        new MessageTemplateActionBuilder('message label', 'test message'),
+                        new UriTemplateActionBuilder('uri label', 'https://example.com'),
+                    ]
                 )
             );
 	$response = $bot->replyMessage(
