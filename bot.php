@@ -36,7 +36,7 @@ if($arrJson['events'][0]['message']['text'] == "hi"){
 		4. return by userid
 	*/
 
-	$imageMesageBuilder=new \LINE\LINEBot\MessageBuilder\ImageMessageBuilder('http://order2easy.com/line-api/file1234.png','http://order2easy.com/line-api/file1234.png');
+	$imageMesageBuilder=new \LINE\LINEBot\MessageBuilder\ImageMessageBuilder('https://javahome.herokuapp.com/img.png','https://javahome.herokuapp.com/img.png');
 
 	
 	$response = $bot->replyMessage($arrJson['events'][0]['replyToken'], $imageMesageBuilder);
