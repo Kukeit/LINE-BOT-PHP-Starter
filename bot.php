@@ -43,7 +43,7 @@ if($arrJson['events'][0]['message']['text'] == "hi"){
 	$TemplateMessageBuilderObj=new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder(
                 'alt test',
                  new ButtonTemplateBuilder(
-                    'button button'),
+                    'button button',
                     'button',
                     'http://www.pttplc.com/style%20library/ui/images/Master/ptt-logo.png',
                     [
