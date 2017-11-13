@@ -14,10 +14,10 @@ $arrJson = json_decode($content, true);
 $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
 $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret]);
 
-$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('hello');
+$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('hello->'.$arrJson['events'][0]['replyToken']);
 $response = $bot->replyMessage($arrJson['events'][0]['replyToken'], $textMessageBuilder);
 
-echo $response->getHTTPStatus() . ' ' . $response->getRawBody()."->".$arrJson['events'][0]['replyToken'];
+echo $response->getHTTPStatus() . ' ' . $response->getRawBody()."->";
 
 
 
