@@ -49,7 +49,7 @@ if($arrJson['events'][0]['message']['text'] == "hi"){
                     [
                         new PostbackTemplateActionBuilder('postback label', 'post=back'),
                         new MessageTemplateActionBuilder('message label', 'test message'),
-                        new UriTemplateActionBuilder('uri label', 'https://example.com'),
+                        new UriTemplateActionBuilder('uri label', 'http://addplaybuttontoimage.way4info.net/Images/Icons/21.png'),
                     ]
                 )
             );
