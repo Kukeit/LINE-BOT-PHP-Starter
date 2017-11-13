@@ -36,10 +36,8 @@ if($arrJson['events'][0]['message']['text'] == "hi"){
                     'button title',
                     'button button',
                     'http://www.topconnects.com/Content/img/ImagePlayButton/PlayButton-6.png',
-                    [
-                        new PostbackTemplateActionBuilder('postback label', 'post=back'),
-                        new MessageTemplateActionBuilder('message label', 'test message'),
-                        new UriTemplateActionBuilder('uri label', 'https://example.com'),
+                    [  
+                        new MessageTemplateActionBuilder('message label', 'test message')
                     ]
                 )
             );
