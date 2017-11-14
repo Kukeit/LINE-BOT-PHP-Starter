@@ -44,7 +44,7 @@ if($arrJson['events'][0]['message']['text'] == "hi"){
 	
 	$response = $bot->replyMessage($arrJson['events'][0]['replyToken'], $imageMesageBuilder);
 
-}else if($arrJson['events'][0]['message']['text'] == "theme1"){
+}else if($arrJson['events'][0]['message']['text'] == "ptt"){
 
 	$actions=array(
 		array('type'=>'message','label'=>'Yes','text'=>'yes'),
