@@ -37,8 +37,8 @@ if($arrJson['events'][0]['message']['text'] == "hi"){
 	*/
 
 	$imageMesageBuilder=new \LINE\LINEBot\MessageBuilder\ImageMessageBuilder(
-		'http://www.thaisugarmill.com/gallery_images/192255990949-TSMTKPLOGO.jpg',
-		'http://www.thaisugarmill.com/gallery_images/192255990949-TSMTKPLOGO.jpg'
+		'https://raw.githubusercontent.com/Kukeit/LINE-BOT-PHP-Starter/master/ptt_s.png',
+		'https://raw.githubusercontent.com/Kukeit/LINE-BOT-PHP-Starter/master/ptt_s.png'
 		);
 
 	
