@@ -73,7 +73,7 @@
 </head>
 
 <body>
-	<canvas width="500" height="300" id="canvas">Sorry, no canvas available</canvas>
+	<canvas width="230" height="300" id="canvas">Sorry, no canvas available</canvas>
 	<a id="download">Download as image</a>
 </body>
 
@@ -93,13 +93,46 @@
  */
  function doCanvas() {
  	/* draw something */
- 	ctx.fillStyle = '#f90';
+ 	console.log(canvas.height);
+ 	ctx.fillStyle = '#0E61FD';
  	ctx.fillRect(0, 0, canvas.width, canvas.height);
  	ctx.fillStyle = '#fff';
- 	ctx.font = '60px sans-serif';
- 	ctx.fillText('ราคาน้ำมัน', 10, canvas.height / 2 - 15);
- 	ctx.font = '26px sans-serif';
- 	ctx.fillText('Click link below to save this as image', 15, canvas.height / 2 + 35);
+ 	ctx.font = '20px sans-serif';
+ 	ctx.textAlign="center"; 
+ 	ctx.fillText('ราคาน้ำมัน ปตท.', 120, canvas.height / 2 - 120);
+ 	ctx.font = '13px sans-serif';
+ 	ctx.textAlign="right"; 
+ 	ctx.fillText('<?php echo date("d/m/Y H:i:s", time()); ?>', 165, canvas.height / 2 - 100);
+ 	ctx.font = '1-px sans-serif';
+ 	ctx.textAlign="left";
+ 	ctx.fillText('บาท / ลิตร', 150, canvas.height / 2-80);
+ 	ctx.font = '12px sans-serif';
+ 	ctx.textAlign="right";
+ 	ctx.fillText('Blue Gasoline 95:', 150, canvas.height / 2-60);
+ 	ctx.fillText('35.36', 200, canvas.height / 2-60);
+
+ 	ctx.fillText('Blue Gasohol 91:', 150, canvas.height / 2-40);
+ 	ctx.fillText('35.36', 200, canvas.height / 2-40);
+
+ 	ctx.fillText('Blue Gasohol 95:', 150, canvas.height / 2-20);
+ 	ctx.fillText('35.36', 200, canvas.height / 2-20);
+
+ 	ctx.fillText('Blue Gasohol E20:', 150, canvas.height / 1-150);
+ 	ctx.fillText('35.36', 200, canvas.height / 1-150);
+
+ 	ctx.fillText('Blue Gasohol 85:', 150, canvas.height / 1-130);
+ 	ctx.fillText('35.36', 200, canvas.height / 1-130);
+
+ 	ctx.fillText('Blue Diesel:', 150, canvas.height / 1-110);
+ 	ctx.fillText('35.36', 200, canvas.height / 1-110);
+
+ 	ctx.fillText('HyForce Premium Diesel:', 150, canvas.height / 1-90);
+ 	ctx.fillText('35.36', 200, canvas.height / 1-90);
+
+ 	ctx.fillText('PTT NGV:', 150, canvas.height / 1-50);
+ 	ctx.fillText('35.36', 200, canvas.height / 1-50);
+
+ 
  }
 
 /**
