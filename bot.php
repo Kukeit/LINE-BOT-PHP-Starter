@@ -59,7 +59,7 @@ if($arrJson['events'][0]['message']['text'] == "hi"){
                     [
                         new PostbackTemplateActionBuilder('postback label', 'post=back'),
                         new MessageTemplateActionBuilder('message label', 'test message'),
-                        new UriTemplateActionBuilder('uri label', 'http://order2easy.com/line-api/file1234.png'),
+                        new UriTemplateActionBuilder('uri label', 'http://php.net/manual/en/datetime.format.php'),
                     ]
                 )
             );
